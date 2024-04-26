@@ -1,53 +1,56 @@
 
-# Video Creation from Images and Audio
+# Video Concatenation and Image Handling Script
 
-This project automates the process of creating a video from a series of images, synchronized with an audio file. The final video is tailored for platforms that support short video content, such as YouTube Shorts.
+This project is designed to automate the process of creating videos by concatenating multiple MP4 files and synchronizing them with images and optional audio. The output is specifically formatted for platforms that prefer vertical video formats, such as YouTube Shorts.
 
 ## Features
 
-- **Image Resizing**: Automatically resizes images to fit the desired video format (1080x1920 pixels for YouTube Shorts).
-- **Audio Synchronization**: Adjusts the video length to exactly match the duration of the audio.
-- **Flexible Image Input**: Supports a dynamic number of images and adjusts the video duration accordingly.
+- **Video Concatenation**: Combines multiple MP4 files into a single video.
+- **Image Handling**: Dynamically adjusts the display time of images based on the total video duration to fit within a predefined limit (e.g., 60 seconds).
+- **Audio Synchronization**: Synchronizes audio with the video, applying it over images or videos based on configuration.
+- **Output Formatting**: Ensures the final video is in the vertical format (1080x1920), suitable for mobile viewing.
 
 ## Prerequisites
 
-Before you can run this script, you need to have Python installed along with the following packages:
+Before running this script, ensure you have Python installed along with the following packages:
 - moviepy
 - PIL (Pillow)
 
-You can install these packages using pip:
+Install the required packages using pip:
 
-\`\`\`bash
+```bash
 pip install moviepy Pillow
-\`\`\`
+```
 
 ## Setup
 
-1. Clone this repository or download the files to your local machine.
-2. Place your image and audio files in the designated media folder (e.g., `media_folder`).
+1. Clone this repository or download the scripts to your local machine.
+2. Organize your media files (MP4, JPEG, MP3) in a designated media folder.
 
 ## Usage
 
-To run the script, navigate to the script's directory in your terminal and run:
+To use this script, update the `media_folder` variable in the script to point to your media folder. Configure the script to place images at the beginning or the end of the video by setting `images_at_start` to `True` or `False`.
 
-\`\`\`bash
-python script_name.py
-\`\`\`
+Run the scripts with:
 
-Ensure that you update the `media_folder` and `audio_file` variables in the script to point to the correct locations of your media files.
+```bash
+python movie-from-images-audio.py # for images and audio
+python movie-from-images-audio-video.py # for images, audio, and video or just video
+```
 
 ## Output
 
-The script will output a video file named `output_video.mp4` in the same directory as the script. This video will have all images displayed for a duration that matches the audio file length, resized and formatted for optimal viewing on mobile devices in portrait orientation.
+The script will produce an `output_video.mp4` file in the specified format, combining all input media with optional audio synchronization.
 
 ## Contributing
 
-Contributions to this project are welcome. Please fork the repository and submit a pull request with your enhancements.
+Contributions are welcome. Please fork the repository, make your changes, and submit a pull request.
 
 ## License
 
-This project is released under the MIT License. See the `LICENSE` file for more details.
+This project is released under the MIT License. See the LICENSE file for more details.
 
 ## Contact
 
-For any queries or technical support, please open an issue in the repository. 
+For support or queries, please open an issue on the repo.
+
